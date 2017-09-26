@@ -1,5 +1,6 @@
-FROM alpine:3.6
-MAINTAINER Billgo <cocobill@vip.qq.com>
+FROM alpine:latest
+
+MAINTAINER billgo <cocobill@vip.qq.com>
 
 RUN apk update && \
     apk add --no-cache ca-certificates && \
