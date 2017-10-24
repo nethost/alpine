@@ -1,10 +1,8 @@
 FROM alpine:3.6
-
 MAINTAINER billgo <cocobill@vip.qq.com>
 
 RUN apk update && \
-    apk add --no-cache ca-certificates && \
-    apk add tzdata && \
+    apk upgrade && \
+    apk add --no-cache ca-certificates tzdata curl wget bash jq && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo "Asia/Shanghai" > /etc/timezone && \ 
-    rm -rf /var/cache/apk/*
+    echo "Asia/Shanghai" > /etc/timezone && rm -rf /var/cache/apk/*
